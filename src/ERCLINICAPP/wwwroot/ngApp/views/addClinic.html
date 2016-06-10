@@ -1,0 +1,23 @@
+<form ng-show="account.getClaim('isAdmin')" ng-submit="controller.addClinic()">
+    <label>
+        Specialty
+        <input ng-model="controller.clinic.specialty" type="text" />
+    </label>
+    <label>
+        Shift
+        <input ng-model="controller.clinic.shift" type="text" />
+    </label>
+    <label>
+        Insurance
+        <input ng-model="controller.clinic.insurance" type="text" />
+    </label>
+    <label>
+        Attending
+    <select ng-model="controller.clinic.attending" ng-options="attending.attendingName for attending in controller.attendings"></select>
+     </label>
+    <label>
+        Doctor
+    <select ng-model="controller.clinic.doctor" ng-options="doctor.residentName for doctor in controller.doctors"></select>
+    </label>
+    <input type="submit" value="OK" class="btn-primary" />
+</form>

@@ -1,0 +1,27 @@
+
+<table ng-show="account.isLoggedIn()" class="table table-bordered table-striped" style="background-color:lightgray;">
+    <thead style="background-color:#e6e6e6">
+        <tr>
+            <td><b>Clinic Name</b></td>
+            <td><b>Attendings</b></td>
+            <td><b>Shift</b></td>
+            <td><b>Insurance</b></td>
+            <td ng-show="account.getClaim('isAdmin')"></td>
+            <td ng-show="account.getClaim('isAdmin')"></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="clinic in controller.clinics">
+            <td>{{clinic.specialty}}</td>
+            <td>{{clinic.attending.attendingName}}</td>
+            <td>{{clinic.shift}}</td>
+            <td>{{clinic.insurance}}</td>
+          
+            <!-- if user is administrator -->
+            <td ng-show="account.getClaim('isAdmin')"><button ui-sref="editClinic({ id: clinic.id })">Edit</button></td>
+            <td ng-show="account.getClaim('isAdmin')"><button style="color:red;" ui-sref="deleteClinic({ id: clinic.id })">Delete</button></td>
+        
+        </tr>
+    </tbody>
+</table>
+           
