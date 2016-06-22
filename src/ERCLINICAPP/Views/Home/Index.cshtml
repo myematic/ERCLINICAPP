@@ -1,24 +1,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="ERCLINICAPP">
-<head>
+<head>  
     <title>ERCLINICAPP</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
-    <div class="container" style="background-color:lightsteelblue;">
-        <h1 style="color:#00001a"><b>ERCLINICAPP</b></h1>
-        <div>
-          <a href="/">Home</a> /
-           <a href="/addClinic"ng-show="account.getClaim('isAdmin')">Add Clinic</a > /
-
-          
-           <a href="/login" ng-show="!account.isLoggedIn()">Login</a>
-           <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
-           <div ng-show="account.isLoggedIn()">
-               [{{account.getUserName()}}]
-           </div> 
+    <img src="http://excellenceer.com/wp-content/uploads/2016/04/logo_full.png" />
+    <nav class ="navbar navbar-inverse">
+    <div class="container-fluid">
+           <ul class="nav navbar-nav">
+           <li><a href="/" style="color:red;">Home</a></li>
+           <li><a href="/addClinic"ng-show="account.getClaim('isAdmin')" style="color:red;">Add Clinic</a ></li>                       
+           <li style="text-align:center"><a href="/login" ng-show="!account.isLoggedIn()" style="color:red;">Login</a></li>
+           <li style="text-align:center"><a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()" style="color:red;">Logout</a></li>             
+            </ul>
         </div>
+        </nav>
+    <div ng-show="account.isLoggedIn()">
+       Currently logged in as: [{{account.getUserName()}}]
+    </div> 
+    <div>
         <hr />
 
         <ui-view></ui-view>

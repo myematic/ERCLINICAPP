@@ -1,16 +1,31 @@
-﻿<form ng-submit="controller.editClinic(id)">
-    <label>
-        Specialty
+﻿<style>
+input[type=text] {
+    border: 2px solid lightblue;
+    border-radius: 4px;
+}
+</style>
+
+<form ng-submit="controller.editClinic(id)">
+    <center style="color:steelblue"><h1>Edit Page</h1> </center>
+    <hr />
+      <label>
+        Specialty&nbsp;
         <input ng-model="controller.clinic.specialty" placeholder="Specialty" type="text" />
     </label>
+    <br />
+    <br />
     <label>
-        Shift
+        Shift Time&nbsp;
         <input ng-model="controller.clinic.shift" placeholder="Shift" type="text" />
     </label>
+    <br />
+    <br />
     <label>
-        Insurance
+        Insurance&nbsp;
         <input ng-model="controller.clinic.insurance" placeholder="Insurance" type="text" />
     </label>
+    <br />
+    <br />
     
         <input type="submit" value="OK" class="btn-primary" />
 </form>

@@ -1,23 +1,39 @@
+<style>
+input[type=text] {
+    border: 2px solid lightblue;
+    border-radius: 4px;
+}
+select {
+    border: 2px solid lightblue;
+    border-radius: 4px;
+}
+
+
+</style>
 <form ng-show="account.getClaim('isAdmin')" ng-submit="controller.addClinic()">
+    <center style="color:steelblue"><h3>Add Clinic Page</h3> </center>
+    <hr />
     <label>
-        Specialty
+        Specialty&nbsp;
         <input ng-model="controller.clinic.specialty" type="text" />
     </label>
     <label>
-        Shift
+        Shift&nbsp;
         <input ng-model="controller.clinic.shift" type="text" />
     </label>
     <label>
-        Insurance
+        Insurance&nbsp;
         <input ng-model="controller.clinic.insurance" type="text" />
     </label>
+    <br />
     <label>
-        Attending
+        Attending&nbsp;
     <select ng-model="controller.clinic.attending" ng-options="attending.attendingName for attending in controller.attendings"></select>
      </label>
-    <label>
-        Doctor
+   <label>
+      Doctor&nbsp;
     <select ng-model="controller.clinic.doctor" ng-options="doctor.residentName for doctor in controller.doctors"></select>
     </label>
+    <br /><br />&nbsp;
     <input type="submit" value="OK" class="btn-primary" />
 </form>

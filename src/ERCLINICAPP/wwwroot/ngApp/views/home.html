@@ -1,6 +1,6 @@
 
-<table ng-show="account.isLoggedIn()" class="table table-bordered table-striped" style="background-color:lightgray;">
-    <thead style="background-color:#e6e6e6">
+<table ng-show="account.isLoggedIn()" class="table table-bordered table-striped" style="background-color:lightblue;">
+    <thead style="background-color:#ffe6e6">
         <tr>
             <td><b>Clinic Name</b></td>
             <td><b>Attendings</b></td>
@@ -18,8 +18,8 @@
             <td>{{clinic.insurance}}</td>
           
             <!-- if user is administrator -->
-            <td ng-show="account.getClaim('isAdmin')"><button ui-sref="editClinic({ id: clinic.id })">Edit</button></td>
-            <td ng-show="account.getClaim('isAdmin')"><button style="color:red;" ui-sref="deleteClinic({ id: clinic.id })">Delete</button></td>
+            <td ng-show="account.getClaim('isAdmin')"><button type="button" class="btn btn-info" ui-sref="editClinic({ id: clinic.id })">Edit</button></td>
+            <td ng-show="account.getClaim('isAdmin')"><button type="button" class="btn btn-danger" ui-sref="deleteClinic({ id: clinic.id })">Delete</button></td>
         
         </tr>
     </tbody>
